@@ -1,16 +1,19 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Text, View, Button} from 'react-native';
+import {Text, Button} from 'react-native';
+
+import BoxCenter from './../components/box-center';
+import Box from './../components/box';
 
 function SearchView({navigation}) {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <BoxCenter>
       <Text>Ara!</Text>
       <Button
         title="Go to Details"
         onPress={() => navigation.navigate('Detail')}
       />
-    </View>
+      <Box size={20} bg="blue" mt={20} />
+    </BoxCenter>
   );
 }
 
