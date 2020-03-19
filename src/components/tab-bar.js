@@ -1,9 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 
 import Button from './button';
+import Box from './box';
+import {Search, Bookmark, Clock} from './icons';
+
+import theme from './../utils/theme';
 
 function TabBar({state, descriptors, navigation}) {
   return (
@@ -31,9 +35,28 @@ function TabBar({state, descriptors, navigation}) {
           }
         };
 
-        return (
-          <Button flex={1} onPress={onPress}>
-            <Text>{label}</Text>
+        return label === 'Search' ? (
+          <Box p={15} mt={-15} bg="white" borderRadius="full">
+            <Button
+              key={label}
+              size={56}
+              borderRadius="full"
+              bg="red"
+              onPress={onPress}>
+              <Search stroke="white" />
+            </Button>
+          </Box>
+        ) : (
+          <Button
+            key={label}
+            pt={6}
+            height={56}
+            flex={1}
+            flexDirection="column"
+            onPress={onPress}>
+            {label === 'History' && <Clock stroke={theme.colors.gray} />}
+            {label === 'Favorite' && <Bookmark stroke={theme.colors.gray} />}
+            <Box size={3} bg={isFocused ? 'red' : 'white'} mt={6} />
           </Button>
         );
       })}
