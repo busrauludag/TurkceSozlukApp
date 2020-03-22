@@ -1,19 +1,18 @@
 /* eslint-disable react-native/no-inline-styles */
-
 import React from 'react';
-import {View} from 'react-native';
+import { View } from 'react-native';
 
 import Button from './button';
 import Box from './box';
-import {Search, Bookmark, Clock} from './icons';
+import { Search, Bookmark, Clock } from './icons';
 
 import theme from './../utils/theme';
 
-function TabBar({state, descriptors, navigation}) {
+function TabBar({ state, descriptors, navigation }) {
   return (
-    <View style={{flexDirection: 'row'}}>
+    <View style={{ flexDirection: 'row' }}>
       {state.routes.map((route, index) => {
-        const {options} = descriptors[route.key];
+        const { options } = descriptors[route.key];
         const label =
           options.tabBarLabel !== undefined
             ? options.tabBarLabel
