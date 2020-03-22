@@ -4,8 +4,8 @@ import Svg, { Circle, Path } from 'react-native-svg';
 function SvgClock(props) {
   return (
     <Svg
-      width="24"
-      height="24"
+      width="1em"
+      height="1em"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

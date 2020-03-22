@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Svg, { Circle, Path } from 'react-native-svg';
+import Svg, { Path } from 'react-native-svg';
 
-function SvgSearch(props) {
+function SvgRotateCcw(props) {
   return (
     <Svg
       width={24}
@@ -13,10 +13,10 @@ function SvgSearch(props) {
       strokeLinejoin="round"
       className=""
       {...props}>
-      <Circle cx={11} cy={11} r={8} />
-      <Path d="M21 21l-4.35-4.35" />
+      <Path d="M1 4v6h6" />
+      <Path d="M3.51 15a9 9 0 102.13-9.36L1 10" />
     </Svg>
   );
 }
 
-export default SvgSearch;
+export default SvgRotateCcw;
