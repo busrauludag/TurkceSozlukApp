@@ -35,13 +35,8 @@ function TabBar({ state, descriptors, navigation }) {
         };
 
         return label === 'Search' ? (
-          <Box p={15} mt={-15} bg="white" borderRadius="full">
-            <Button
-              key={label}
-              size={56}
-              borderRadius="full"
-              bg="red"
-              onPress={onPress}>
+          <Box key={label} p={15} mt={-15} bg="white" borderRadius="full">
+            <Button size={56} borderRadius="full" bg="red" onPress={onPress}>
               <Search stroke="white" />
             </Button>
           </Box>
