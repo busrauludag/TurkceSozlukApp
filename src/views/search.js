@@ -7,13 +7,13 @@ import { Logo } from '../components/icons';
 
 function SearchView({ navigation }) {
   return (
-    <BoxCenter>
+    <BoxCenter bg="atasozleriLight">
       <Text>Ara!</Text>
       <Button
         title="Go to Details"
         onPress={() => navigation.navigate('Detail')}
       />
-      <Logo width={120} />
+      <Logo width={120} color="red" />
     </BoxCenter>
   );
 }
