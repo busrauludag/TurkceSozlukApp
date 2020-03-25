@@ -2,7 +2,7 @@ const space = [];
 
 // border radius
 const radii = {
-  normal: 6,
+  normal: 8,
   full: 9999,
 };
 
