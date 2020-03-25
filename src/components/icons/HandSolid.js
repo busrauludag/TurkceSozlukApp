@@ -3,7 +3,13 @@ import Svg, { Path } from 'react-native-svg';
 
 function SvgHandSolid(props) {
   return (
-    <Svg width={32} height={32} fill="none" className="" {...props}>
+    <Svg
+      width={32}
+      height={32}
+      viewBox="0 0 32 32"
+      fill="none"
+      className=""
+      {...props}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"

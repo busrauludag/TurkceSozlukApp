@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "pod": "cd ios; pod install; cd ..",
-    "svgr": "svgr ./src/icons -d ./src/components/icons --native --svg-props 'className='",
+    "svgr": "svgr ./src/icons -d ./src/components/icons --native --svg-props 'className=' --svgo-config .svgorc.json",
     "test": "jest",
     "lint": "eslint ."
   },
