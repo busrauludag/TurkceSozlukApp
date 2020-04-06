@@ -6,6 +6,7 @@ import {
   color,
   size,
   space,
+  shadow,
   typography,
   borderRadius,
 } from 'styled-system';
@@ -19,6 +20,7 @@ const Input = styled(TextInput).attrs(props => {
     color,
     size,
     space,
+    shadow,
     typography,
     borderRadius,
   ),
