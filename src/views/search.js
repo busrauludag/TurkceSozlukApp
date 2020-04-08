@@ -2,6 +2,7 @@
 import React from 'react';
 import { Text, ImageBackground, StatusBar } from 'react-native';
 import SafeAreaView from 'react-native-safe-area-view';
+import { useFocusEffect } from '@react-navigation/native';
 
 import { Logo } from '../components/icons';
 import Search from '../components/search';
@@ -10,6 +11,12 @@ import Box from '../components/box';
 import bg from '../assets/bg.jpg';
 
 function SearchView({ navigation }) {
+  useFocusEffect(
+    React.useCallback(() => {
+      StatusBar.setBarStyle('light-content');
+    }, []),
+  );
+
   return (
     <Box as={SafeAreaView} bg="red" flex={1}>
       <StatusBar barStyle="light-content" />

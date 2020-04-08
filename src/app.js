@@ -1,12 +1,13 @@
 import React from 'react';
 import 'react-native-gesture-handler';
+
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'styled-components';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import TabBar from './components/tab-bar';
-import Box from './components/box';
 
 import SearchView from './views/search';
 import FavoriteView from './views/favorite';
@@ -31,15 +32,17 @@ function SearchStack() {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <NavigationContainer>
-        <Tab.Navigator
-          initialRouteName="Search"
-          tabBar={props => <TabBar {...props} />}>
-          <Tab.Screen name="History" component={HistoryView} />
-          <Tab.Screen name="Search" component={SearchStack} />
-          <Tab.Screen name="Favorite" component={FavoriteView} />
-        </Tab.Navigator>
-      </NavigationContainer>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Tab.Navigator
+            initialRouteName="Search"
+            tabBar={props => <TabBar {...props} />}>
+            <Tab.Screen name="History" component={HistoryView} />
+            <Tab.Screen name="Search" component={SearchStack} />
+            <Tab.Screen name="Favorite" component={FavoriteView} />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 }
