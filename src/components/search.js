@@ -8,9 +8,27 @@ import { Search, Close } from './icons';
 
 import theme from '../utils/theme';
 
-function SearchBox() {
+function SearchBox({ onChangeFocus }) {
   const [value, setValue] = React.useState('');
   const [isFocus, setFocus] = React.useState(false);
+
+  React.useEffect(() => {
+    Keyboard.addListener('keyboardDidShow', keyboardDidShow);
+    Keyboard.addListener('keyboardDidHide', keyboardDidHide);
+    // Sayfadan cikinca fonksiyonlari siler
+    return function() {
+      Keyboard.removeListener('keyboardDidShow', keyboardDidShow);
+      Keyboard.removeListener('keyboardDidHide', keyboardDidHide);
+    };
+  });
+
+  const keyboardDidShow = () => {
+    onChangeFocus(true);
+  };
+
+  const keyboardDidHide = () => {
+    onChangeFocus(false);
+  };
 
   const onCancel = () => {
     setFocus(false);
